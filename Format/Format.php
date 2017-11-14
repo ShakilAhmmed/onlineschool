@@ -1,9 +1,9 @@
 <?php
 class Format{
-   //protected $data;
    public function validation($data)
    {
      $data=trim($data);
+     $data=strip_tags($data);
      $data=htmlentities($data);
      $data=htmlspecialchars($data);
      $data=stripcslashes($data);
