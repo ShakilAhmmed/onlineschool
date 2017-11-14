@@ -1,6 +1,6 @@
 <?php
 include '../Session/Session.php';
-Session::init();
+ Session::checkLogin();
 class Login{
 	
 	private $db;
@@ -18,7 +18,7 @@ class Login{
 
 	public function __construct()
 	{
-		$this->db=new Database;
+		$this->db  =new Database;
 		$this->fm  =new Format;
 	}
 

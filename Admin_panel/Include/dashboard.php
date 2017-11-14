@@ -1,5 +1,4 @@
-                
-                <div class="content-wrapper">
+
                     <h3 class="text-primary mb-4">Dashboard</h3>
                     <div class="row">
                         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 mb-4">
@@ -133,4 +132,4 @@
                             </div>
                         </div>
                     </div>
-                </div>
+            

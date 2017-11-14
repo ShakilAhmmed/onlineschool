@@ -28,7 +28,7 @@
 		 public static function checkLogin(){
 		  self::init();
 		  if (self::get("login")== true) {
-		   header("Location:../User_panel/index.php");
+		   header("Location:../Admin_panel/index.php");
 		  }
 		 }
 

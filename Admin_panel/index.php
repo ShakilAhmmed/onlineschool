@@ -1,17 +1,24 @@
 <?php
-   include '../Config/Config.php';
-   include '../Database/Database.php';
    include '../Session/Session.php';
-   Session::init();
+   Session::checkSession();
+   include_once '../Config/Config.php';
+   include_once '../Database/Database.php';
+   include_once '../Format/Format.php';
+  
    spl_autoload_register(function($class){
       include '../Class/'.$class.".php";
    });
   $file=new File;
+  $setup=new Setup;
+  $email=Session::get("Email");
+  $first=Session::get("FirstName");
+  $last=Session::get("LastName");
   //$login=new Login;
   if($_SERVER['REQUEST_METHOD']=='POST'&&isset($_POST['logout']))
   {
     Session::destroy();
   }
+  $value=$setup->admin_data($email);
   ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +30,9 @@
       <title>Admin</title>
       <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
       <link rel="stylesheet" href="node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://use.fontawesome.com/c6a0be9dda.js"></script>
       <link rel="stylesheet" href="css/style.css"/>
       <link rel="shortcut icon" href="images/favicon.png"/>
   </head>
@@ -43,7 +53,7 @@
                 </form>
                 <ul class="navbar-nav ml-lg-auto d-flex align-items-center flex-row">
                     <li class="nav-item">
-                        <a class="nav-link profile-pic" href="#"><img class="rounded-circle" src="images/face.jpg" alt=""></a>
+                        <a class="nav-link profile-pic" href="#"><img class="rounded-circle" src="<?=$value['profile']?>" onerror="this.src='images/blankavatar.png';" alt=""></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"><i class="fa fa-th"></i></a>
@@ -59,10 +69,10 @@
             <div class="row row-offcanvas row-offcanvas-right">
                 <nav class="bg-white sidebar sidebar-fixed sidebar-offcanvas" id="sidebar">
                 <div class="user-info">
-                    <img src="images/face.jpg" alt="">
+                    <img style="width: 30%" class="img-circle"  src="<?=$value['profile']?>" onerror="this.src='images/blankavatar.png';">
                     <p class="name">
                     <?php
-                     echo Session::get("FirstName")."".Session::get("LastName");
+                     echo $first."".$last;
                     ?>
                       
                     </p>
@@ -83,82 +93,25 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="pages/forms.html">
+                            <a class="nav-link" href="?page=catagory">
                                 <!-- <i class="fa fa-wpforms"></i> -->
                                 <img src="images/icons/3.png" alt="">
-                                <span class="menu-title">Forms</span>
+                                <span class="menu-title">Catagory</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="pages/buttons.html">
+                            <a class="nav-link" href="?page=content">
                                 <!-- <i class="fa fa-calculator"></i> -->
                                 <img src="images/icons/4.png" alt="">
-                                <span class="menu-title">Buttons</span>
+                                <span class="menu-title">Add Content</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="pages/tables.html">
+                            <a class="nav-link" href="?page=content_list">
                                 <!-- <i class="fa fa-table"></i> -->
                                 <img src="images/icons/5.png" alt="">
-                                <span class="menu-title">Tables</span>
+                                <span class="menu-title">My Content List</span>
                             </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="pages/charts.html">
-                                <!-- <i class="fa fa-bar-chart"></i> -->
-                                <img src="images/icons/6.png" alt="">
-                                <span class="menu-title">Charts</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="pages/icons.html">
-                                <!-- <i class="fa fa-font"></i> -->
-                                <img src="images/icons/7.png" alt="">
-                                <span class="menu-title">Icons</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="pages/typography.html">
-                                <!-- <i class="fa fa-bold"></i> -->
-                                <img src="images/icons/8.png" alt="">
-                                <span class="menu-title">Typography</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                                <!-- <i class="fa fa-address-book"></i> -->
-                                <img src="images/icons/9.png" alt="">
-                                <span class="menu-title">Sample Pages<i class="fa fa-sort-down"></i></span>
-                            </a>
-                            <div class="collapse" id="collapseExample">
-                                <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="samples/blank_page.html">
-                                      Blank Page
-                                    </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="samples/register.html">
-                                      Register
-                                    </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="samples/login.html">
-                                      Login
-                                    </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="samples/not-found.html">
-                                      404
-                                    </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="samples/error.html">
-                                      500
-                                    </a>
-                                    </li>
-                                </ul>
-                            </div>
                         </li>
                         <li class="nav-item">
                                 <form action=" " method="post">
@@ -168,10 +121,11 @@
                     </ul>
                 </nav>
                 <!-- SIDEBAR ENDS -->
-
+          <div class="content-wrapper">
                 <?php
                 $file->file_load();
                 ?>
+          </div>
                 <footer class="footer">
                     <div class="container-fluid clearfix">
                       <span class="float-right">
