@@ -8,6 +8,7 @@ error_reporting(true);
     protected $query;
     protected $insert_data;
     protected $first_data;
+    protected $get_data;
     protected $update_data;
     protected $delete_data;
 
@@ -75,6 +76,19 @@ error_reporting(true);
     if($this->connection->affected_rows>0)
     {
       return true;
+    }
+    else
+    {
+      return false;
+    }
+  }
+   public function  get($table,$column)
+  {
+    $this->query="SELECT $column FROM $table";
+    $this->get_data=$this->connection->query($this->query) or die($this->connection->error.__LINE__);
+    if($this->get_data->num_rows>0)
+    {
+      return $this->get_data;
     }
     else
     {

@@ -40,7 +40,7 @@ class Content{
         $this->content_title=$this->fm->validation($data['content_title']);
         $this->content_author=mysqli_real_escape_string($this->db->connection,$data['content_author']);
         $this->content_author=$this->fm->validation($data['content_author']);
-    $this->content_catagory=mysqli_real_escape_string($this->db->connection,$data['content_catagory']);
+     $this->content_catagory=mysqli_real_escape_string($this->db->connection,$data['content_catagory']);
      $this->content_catagory=$this->fm->validation($data['content_catagory']);
      $this->post=mysqli_real_escape_string($this->db->connection,$data['post']);
      $this->post=$this->fm->validation($data['post']);
