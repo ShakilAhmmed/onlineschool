@@ -18,6 +18,7 @@ class Content{
 	private $ext;
 	private $path;
 	private $inserted;
+  private $data_list;
 
 	   public function __construct()
    {
@@ -132,13 +133,21 @@ class Content{
         $this->inactive=$this->db->update("content","content_status='Active'","id='$this->status_id' AND email='$this->email'");
         if($this->inactive)
         {
-        echo $this->fm->success("Status Updated Into Inactive");
+        echo $this->fm->success("Status Updated Into Active");
         }
         else
         {
           echo $this->fm->error("Something Went Wrong");
         }
       }
+    }
+  }
+   public function content_list_user()
+  {
+    $this->data_list=$this->db->first("content","*","content_status='Active'");
+    if($this->data_list)
+    {
+      return $this->data_list;
     }
   }
 }
