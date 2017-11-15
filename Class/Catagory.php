@@ -10,6 +10,7 @@ class Catagory{
 	private $email;
 	private $inserted;
 	private $data;
+	private $data_user;
 	private $delete_id;
 	private $deleted;
 	private $status_id;
@@ -153,5 +154,14 @@ class Catagory{
          	echo $this->fm->error("Somthing Went Wrong");
          }
       }
+	}
+
+	public function catagory_list_user()
+	{
+		$this->data_user=$this->db->first("catagory","*","catagory_status='Active'");
+		if($this->data_user)
+		{
+			return $this->data_user;
+		}
 	}
 }

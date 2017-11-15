@@ -18,7 +18,8 @@ class Setup{
   protected $profile;
   protected $password;
   protected $retype_password;
-	protected $third;
+  protected $third;
+	protected $data_user;
 
 
    public function __construct()
@@ -122,6 +123,15 @@ class Setup{
           echo $this->fm->error("Password Not Matched");
         }
      }
+  }
+
+  public function user_list()
+  {
+    $this->data_user=$this->db->first("user","*","status='Active'");
+    if($this->data_user)
+    {
+      return $this->data_user;
+    }
   }
 
 	

@@ -1,14 +1,15 @@
-    
-<!--
-	Author: W3layouts
-	Author URL: http://w3layouts.com
-	License: Creative Commons Attribution 3.0 Unported
-	License URL: http://creativecommons.org/licenses/by/3.0/
--->
+<?php
+   include_once '../Config/Config.php';
+   include_once '../Database/Database.php';
+   include_once '../Format/Format.php';
+    spl_autoload_register(function($class){
+      include '../Class/'.$class.".php";
+   });
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Education Portal an Education Category Bootstrap Responsive Website Template | Home :: w3layouts</title>
+<title>Online Education</title>
 <!-- Meta tag Keywords -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -63,8 +64,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 					<nav class="link-effect-2" id="link-effect-2">
 						<ul class="nav navbar-nav">
 							<li class="active"><a href="index.html">Home</a></li>
-							<li><a href="#about" class="scroll">About</a></li>
-							<li><a href="#services" class="scroll">services</a></li>
+							<li><a href="#catagory" class="scroll">Catagory</a></li>
 							<li><a href="#gallery" class="scroll">gallery</a></li>
 							<li><a href="#professor" class="scroll">professors</a></li>
 							<li><a href="#contact" class="scroll">Contact</a></li>
@@ -72,14 +72,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 					</nav>
 				</div>
 				</div>
-			</nav>
-			<div class="w3-banner-links">
-				<ul class="banner-agileits">
-					<li><a href="#admission" class="scroll">Click for admission</a></li>
-					<li><i class="fa fa-mobile" aria-hidden="true"></i>+91-123456789</li>
-				</ul>
-
-</div>			
+			</nav>		
 	</div>
 		<!--//header-->
 <!-- banner -->
@@ -96,17 +89,16 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			<div class="item active"> 
 				<div class="container">
 					<div class="carousel-caption">
-						<h2>Lorem ipsum dolor </h2>
-						<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-						<button class="btn btn-primary" data-target="#myModal" data-toggle="modal">Read more</button>
+						<h2>Online Education</h2>
+						<p>Educational technology is "the study and ethical practice of facilitating learning and improving performance by creating, using, and managing appropriate technological processes and resources".</p>
 					</div>
 				</div>
 			</div>
 			<div class="item item2"> 
 				<div class="container">
 					<div class="carousel-caption">
-						<h3> Proin finibus facilis</h3>
-						<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+						<h3>Online Education</h3>
+						<p>Educational technology is "the study and ethical practice of facilitating learning and improving performance by creating, using, and managing appropriate technological processes and resources".</p>
 						<button class="btn btn-primary" data-target="#myModal" data-toggle="modal">Now Open</button>
 					</div>
 				</div>
@@ -114,8 +106,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			<div class="item item3"> 
 				<div class="container">
 					<div class="carousel-caption">
-						<h3>Nullam ut dapibus </h3>
-						<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+						<h3>Online Education</h3>
+						<p>Educational technology is "the study and ethical practice of facilitating learning and improving performance by creating, using, and managing appropriate technological processes and resources".</p>
 						<button class="btn btn-primary" data-target="#myModal" data-toggle="modal">Now Open</button>
 					</div>
 				</div>
@@ -123,8 +115,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			<div class="item item4"> 
 				<div class="container">
 					<div class="carousel-caption">
-						<h3>In ultrices mauris.</h3>
-						<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+						<h3>Online Education</h3>
+						<p>Educational technology is "the study and ethical practice of facilitating learning and improving performance by creating, using, and managing appropriate technological processes and resources".</p>
 						<button class="btn btn-primary" data-target="#myModal" data-toggle="modal">Now Open</button>
 					</div>
 				</div>
@@ -132,8 +124,8 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			<div class="item item5"> 
 				<div class="container">
 					<div class="carousel-caption">
-						<h3>Aenean quis velit.</h3>
-						<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+						<h3>Online Education</h3>
+						<p>Educational technology is "the study and ethical practice of facilitating learning and improving performance by creating, using, and managing appropriate technological processes and resources".</p>
 						<button class="btn btn-primary" data-target="#myModal" data-toggle="modal">Now Open</button>
 					</div>
 				</div>
@@ -159,7 +151,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 					<img src="images/ban1.jpg" class="img-responsive" alt="w3layouts" title="w3layouts">
 				</div>
 				<div class="col-md-6 modal-text">
-					<p class="banner-p1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed nisl ultricies, dignissim mi at, dignissim dolor. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Quisque tempor ultrices nisi eget dictum. Integer quis massa ut elit laoreet consectetur. Sed rhoncus erat tellus, at commodo erat mattis eu.</p>
+					<p class="banner-p1">Educational technology is "the study and ethical practice of facilitating learning and improving performance by creating, using, and managing appropriate technological processes and resources".</p>
 				</div>
 				<div class="clearfix"></div>
 			</div>
@@ -176,173 +168,12 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 <!--//header-banner-section-end-here -->
 <!--/about -->
-<div id="about" class="about all_pad w3ls">
-	<div class="container">
-		<h3 class="w3-about-title">About Us</h3>
-		<div class="ser-top-grids">
-			<div class="col-md-4 ser-grid wow flipInY" data-wow-duration="1.5s" data-wow-delay="0s">
-				<div class="con-left text-center">
-					<div class="spa-ico"><span><i class="fa fa-book" aria-hidden="true"></i></span></div>
-					<h5>Voluptatem </h5>
-					<p>Neque porro quisquam est, qui dolorem ipsum 
-					quia dolor sit amet non consequat augue iaculis proin malesuada </p>
-					
-				</div>
-			</div>
-			<div class="col-md-4 ser-grid wow flipInY" data-wow-duration="1.5s" data-wow-delay="0s">
-				<div class="con-left text-center">
-					<div class="spa-ico"><span><i class="fa fa-pencil" aria-hidden="true"></i></span></div>
-					<h5>Doloremque</h5>
-					<p>Neque porro quisquam est, qui dolorem ipsum 
-					quia dolor sit amet non consequat augue iaculis proin malesuada</p>
-					
-				</div>
-			</div>
-			<div class="col-md-4 ser-grid wow flipInY" data-wow-duration="1.5s" data-wow-delay="0s">
-				<div class="con-left text-center">
-					<div class="spa-ico"><span><i class="fa fa-user" aria-hidden="true"></i></span></div>
-					<h5>Laudantium</h5>
-					<p>Neque porro quisquam est, qui dolorem ipsum 
-					quia dolor sit amet non consequat augue iaculis proin malesuada</p>
-					
-				</div>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-	</div>
-</div>
+<?php include'inc/catagory.php'; ?>
 <!--//about -->
 <!--/services -->
-<div class="services" id="services">
-		<div class="w3-services-head">
-			<h3>Services</h3>
-		</div>
-		<div class="w3-service-grids">
-			<div class="w3-service-grid-top1">
-				<div class="col-md-4 w3-services-grid1">
-						<div class="col-md-4 w3-services-01">
-						<h3>01</h3>
-						</div>
-						<div class="col-md-8 w3-services-heading">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ullamcorper mauris. Vivamus fringilla venenatis enim, non pulvinar turpis euismod eu</p>
-						</div>
-				</div>
-				<div class="col-md-4 w3-services-grid1">
-						<div class="col-md-4 w3-services-01">
-						<h3>02</h3>
-						</div>
-						<div class="col-md-8 w3-services-heading">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ullamcorper mauris. Vivamus fringilla venenatis enim, non pulvinar turpis euismod eu</p>
-						</div>
-				</div>
-				<div class="col-md-4 w3-services-grid1">
-						<div class="col-md-4 w3-services-01">
-							<h3>03</h3>
-						</div>
-						<div class="col-md-8 w3-services-heading">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ullamcorper mauris. Vivamus fringilla venenatis enim, non pulvinar turpis euismod eu</p>
-						</div>
-				</div>
-				<div class="clearfix"></div>
-			</div>
-			<div class="w3-services-grid-top2">
-				<div class="col-md-6 w3-services-grid2">
-						<div class="col-md-4 w3-services-02">
-						<h3>04</h3>
-						</div>
-						<div class="col-md-8 w3-services-heading">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ullamcorper mauris. Vivamus fringilla venenatis enim, non pulvinar turpis euismod eu</p>
-						</div>
-				</div>
-				<div class="col-md-6 w3-services-grid2">
-						<div class="col-md-4 w3-services-02">
-							<h3>05</h3>
-						</div>
-						<div class="col-md-8 w3-services-heading">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget ullamcorper mauris. Vivamus fringilla venenatis enim, non pulvinar turpis euismod eu</p>
-						</div>
-						<div class="clearfix"></div>
-				</div>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-</div>
 
 <!--//services -->
 <!--/experience overview -->
-<div class="w3-faculty-ex">
-	<div class="w3-agile-faculty-head">
-	<h3>Our overview</h3>
-	</div>
-	<div class="w3-aglile-faculty-grids">
-			<div class="w3-aglile_faculty-grid1">
-					<div class="col-md-3 w3-faculty-img1">
-					</div>
-					<div class="col-md-3 w3-faculty-data">
-						<h3>Faculty Experience</h3>
-						 <ul>
-							 <li><span><i class="fa fa-check" aria-hidden="true"></i></span>Lorem ipsum dolor</li>
-							 <li><span><i class="fa fa-check" aria-hidden="true"></i></span>Quisq sitem amete</li>
-							 <li><span><i class="fa fa-check" aria-hidden="true"></i></span>Vivam augue elita</li>
-							 <li><span><i class="fa fa-check" aria-hidden="true"></i></span>egest exuat matti</li>
-							 <li><span><i class="fa fa-check" aria-hidden="true"></i></span>erosa elita sedme</li>
-						 </ul>
-					</div>
-					<div class="col-md-3 w3-faculty-ex-years">
-						<i class="fa fa-calendar-plus-o" aria-hidden="true"></i>
-						<h3>15</h3>
-						<p>more than 15 years of experience </p>
-					</div>
-					<div class="col-md-3 w3-faculty-img2">
-					</div>
-					<div class="clearfix"></div>
-			</div>
-			<div class="w3-agile-faculty-grid2">
-			<div class="col-md-3 w3-faculty-img3">
-					</div>
-				<div class="col-md-3 w3-faculty-ex-years">
-						<i class="fa fa-users" aria-hidden="true"></i>
-						<h3>20</h3>
-						<p>more than 20 years of experience </p>
-				</div>
-				<div class="col-md-3 w3-faculty-data">
-						<h3>Faculty Experience</h3>
-						 <ul>
-							 <li><span><i class="fa fa-check" aria-hidden="true"></i></span>Lorem ipsum dolor</li>
-							 <li><span><i class="fa fa-check" aria-hidden="true"></i></span>Quisq sitem amete</li>
-							 <li><span><i class="fa fa-check" aria-hidden="true"></i></span>Vivam augue elita</li>
-							 <li><span><i class="fa fa-check" aria-hidden="true"></i></span>egest exuat matti</li>
-							 <li><span><i class="fa fa-check" aria-hidden="true"></i></span>erosa elita sedme</li>
-						 </ul>
-				</div>
-				<div class="col-md-3 w3-faculty-img4">
-				</div>
-				<div class="clearfix"></div>
-			</div>
-			<div class="w3-agile-faculty-grid3">
-				<div class="col-md-4 w3-faculty-services1">
-							<i class="fa fa-user" aria-hidden="true"></i>
-						<h3>24*7 faculty</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In congue pretium placerat. </p>
-				</div>
-				<div class="col-md-4 w3-faculty-services2">
-						<i class="fa fa-clock-o" aria-hidden="true"></i>
-						<h3>24 hours labs</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In congue pretium placerat.  </p>
-				</div>
-				<div class="col-md-4 w3-faculty-services3">
-						<i class="fa fa-desktop" aria-hidden="true"></i>
-						<h3>Online training</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In congue pretium placerat. </p>
-				</div>
-				
-				<div class="clearfix"></div>
-			</div>
-			
-			
-	</div>
-	<div class="clearfix"></div>
-</div>
 <!--//experience overview -->
 <!-- gallery -->
 	<div class="gallery" id="gallery">
@@ -454,141 +285,10 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 	</script>
 
 		<!-- professors -->
-	<div class="jarallax team" id="professor">
-		<div class="team-dot">
-			<div class="container">
-				<div class="w3-agile-heading team-heading">
-					<h3>Our professors</h3>
-				</div>
-				<div class="agileits-team-grids">
-					<div class="col-md-3 agileits-team-grid">
-						<div class="team-info">
-							<img src="images/t11.jpg" alt="">
-							<div class="team-caption"> 
-								<h4>Peter Parker</h4>
-								<p>Associate Professor</p>
-								<ul>
-									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fa fa-rss"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 agileits-team-grid">
-						<div class="team-info">
-							<img src="images/t21.jpg" alt="">
-							<div class="team-caption"> 
-								<h4>Johan Botha</h4>
-								<p>Professor</p>
-								<ul>
-									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fa fa-rss"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 agileits-team-grid">
-						<div class="team-info">
-							<img src="images/t31.jpg" alt="">
-							<div class="team-caption"> 
-								<h4>Justo Congue</h4>
-								<p>Technical Professor</p>
-								<ul>
-									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fa fa-rss"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-3 agileits-team-grid">
-						<div class="team-info">
-							<img src="images/t41.jpg" alt="">
-							<div class="team-caption"> 
-								<h4>Steven Wilson</h4>
-								<p>Skill Trainer</p>
-								<ul>
-									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fa fa-rss"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-		</div>
-	</div>
+<?php include'inc/professor.php'; ?>
 	<!-- //professor -->
 
 <!--/contact -->
- <div class="bg-agile w3-admission" id="admission">
-	<div class="book-appointment" id="admissions">
-		<div class="w3-appoint-head">
-	<h3>Admission Form </h3>
-	</div>
-			<form action="#" method="post">
-			<div class="left-agileits-w3layouts same">
-			<div class="gaps">
-				<p>Student Name</p>
-					<input type="text" name="Patient Name" placeholder="" required=""/>
-			</div>	
-				<div class="gaps">	
-				<p>Phone Number</p>
-					<input type="text" name="Number" placeholder="" required=""/>
-				</div>
-				<div class="gaps">
-				<p>Email</p>
-						<input type="email" name="email" placeholder="" required="" />
-				</div>	
-				<div class="gaps">
-				<p>Parent Name</p>
-					<input type="text" name="Patient Name" placeholder="" required=""/>	
-				</div>
-			</div>
-			<div class="right-agileinfo same">
-			<div class="gaps">
-				<p>Gender</p>	
-					<select class="form-control">
-						<option>Male</option>
-						<option>Female</option>
-					</select>
-			</div>
-			<div class="gaps">
-				<p>Select Date for admission</p>		
-						<input  id="datepicker1" name="Text" type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" required="">
-			</div>
-			<div class="gaps">
-				<p>Standard</p>	
-					<select class="form-control">
-						<option>1 to 5 Standard </option>
-						<option>6th Standard </option>
-						<option>7th Standard</option>
-						<option>8th Standard</option>
-						<option>9th tandard</option>
-						<option>10th Standard</option>
-						<option>12th Standard</option>
-						<option>Under Graduation</option>
-						<option>Post Graduation</option>
-					</select>
-			</div>
-			<div class="gaps">
-				<p>How do you know about our institute</p>	
-					<select class="form-control">
-						<option>friends </option>
-						<option>on site </option>
-						<option>social media</option>
-					</select>
-			</div>
-			</div>
-			<div class="clearfix"></div>
-						  <input type="submit" value="Make an admission">
-			</form>
-	</div>
-</div>
 		
 		<!-- Calendar -->
 				<link rel="stylesheet" href="css/jquery-ui.css" />
