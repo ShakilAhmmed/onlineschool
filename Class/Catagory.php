@@ -19,6 +19,9 @@ class Catagory{
 	private $value;
 	private $catagory_data;
 	private $edit_id;
+	private $catagory_name;
+	
+
    public function __construct()
    {
 		$this->db  =new Database;
@@ -163,5 +166,14 @@ class Catagory{
 		{
 			return $this->data_user;
 		}
+	}
+	public function catagory_gallery($catagory_name)
+	{
+      $this->catagory_name=mysqli_real_escape_string($this->db->connection,$catagory_name);
+      $data=$this->db->first("content","*","content_catagory='$this->catagory_name'");
+      if($data)
+      {
+      	return $data;
+      }
 	}
 }
