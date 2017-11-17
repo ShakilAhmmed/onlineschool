@@ -12,14 +12,15 @@ $catagory=new Catagory;
             {
             	while($catagory_list_user_data_value=$catagory_list_user_data->fetch_assoc()) {
             ?>
+            <a href="catagory_gallery.php?action=<?=base64_encode($catagory_list_user_data_value['catagory_title'])?>">
 			<div class="col-md-4 ser-grid wow flipInY" data-wow-duration="1.5s" data-wow-delay="0s">
 				<div class="con-left text-center">
 				<div class="spa-ico"><span><i class="fa fa-book" aria-hidden="true"></i></span></div>
 					<h5><?=$catagory_list_user_data_value['catagory_title']?></h5>
 					<p><?=$catagory_list_user_data_value['catagory_slug']?></p>
-					
 				</div>
 			</div>
+			</a>
 			<?php
 		}
 	 }
